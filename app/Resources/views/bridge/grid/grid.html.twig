@@ -1,0 +1,22 @@
+{% extends  '@PaDatagrid/grid.html.twig' %}
+
+{% block settings_tabs_header %}
+    {{ parent() }}
+    <li>
+        <a data-toggle="tab" href="#grid_export">Export</a>
+    </li>
+{% endblock %}
+
+{% block settings_tabs_body %}
+    {{ parent() }}
+    <div class="tab-pane" id="grid_export">
+        {% if exportFormats|length > 0 %}
+            <ul>
+                {% for formatLabel, format in exportFormats %}
+                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')
+                        | merge(app.request.query.all) | merge({'action': 'export', 'format': format})) }}">{{ formatLabel }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}

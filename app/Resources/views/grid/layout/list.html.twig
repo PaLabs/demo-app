@@ -1,0 +1,10 @@
+{% extends 'layout/index.html.twig' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    {% embed  'bridge/grid//grid.html.twig' with {'grid': grid} %}
+    {% endembed %}
+{% endblock %}
