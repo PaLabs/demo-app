@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Util;
+namespace App\Util;
 
 
 class StringUtils

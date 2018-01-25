@@ -1,0 +1,21 @@
+parameters:
+    locale: 'en'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Symfony\Bundle\FrameworkBundle\Templating\EngineInterface: '@twig'
+
+  App\Grid\:
+    resource: '../src/Grid/*'
+
+
+  App\Bridge\Grid\Filter\Entity\Select2EntityFilter: ~
+  App\Bridge\Grid\Filter\Linq\LinqStringFilter: ~
+  App\Bridge\Grid\Filter\Linq\LinqBooleanFilter: ~
+  App\Bridge\Grid\Field\HtmlImageField: ~
+
+  App\Controller\MainPageEndpoint: ~

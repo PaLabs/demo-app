@@ -12,6 +12,8 @@ return [
     Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true],
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
     Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
+    \Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
+
     PaLabs\DatagridBundle\PaDatagridBundle::class => ['all' => true],
     PaLabs\EndpointBundle\PaEndpointBundle::class => ['all' => true],
 ];

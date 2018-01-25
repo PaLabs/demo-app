@@ -1,0 +1,20 @@
+framework:
+    secret: '%env(APP_SECRET)%'
+    csrf_protection: { enabled: true }
+    form: { enabled: true }
+    http_method_override: true
+    trusted_hosts: ~
+    session:
+        handler_id: ~
+    esi: { enabled: true }
+    fragments: { enabled: true }
+    php_errors:
+        log: true
+    assets: ~
+    cache:
+        prefix_seed: symfony-demo
+    ide: ~
+    validation: { enable_annotations: true }
+    templating:
+        engines:
+          - twig
