@@ -28,7 +28,6 @@
     "twig/extensions": "^1.5",
     "almasaeed2010/adminlte": "^2.3",
     "fzaninotto/faker": "^1.7",
-    "phpoffice/phpexcel": "^1.8",
     "guzzlehttp/guzzle": "^6.3",
     "athari/yalinqo": "^2.4",
     "palabs/datagrid-bundle": "dev-master",
@@ -61,9 +60,9 @@
   },
   "scripts": {
     "auto-scripts": {
-      "security-checker security:check": "script",
-      "cache": "bin/console cache:clear --no-warmup --ansi && bin/console cache:warmup --ansi"
-    }
+      "security-checker security:check": "script"
+    },
+    "cache": "bin/console cache:clear --no-warmup --ansi && bin/console cache:warmup --ansi"
   },
   "repositories": [
     {

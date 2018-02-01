@@ -54,12 +54,6 @@ class DataSource extends AbstractConfigurableDataSource
             ], null, ['selector' => function ($item) {
                 return $item['name']['common'];
             }])
-            ->add('capital', LinqStringFilter::class, [
-                'default' => true,
-                'label' => 'Capital'
-            ], null, ['selector' => function ($item) {
-                return $item['capital'];
-            }])
             ->add('locked', LinqBooleanFilter::class, [
                 'label' => 'Locked'
             ], null, ['selector' => function ($item) {
@@ -70,7 +64,7 @@ class DataSource extends AbstractConfigurableDataSource
 
     public function rows(DataSourceConfiguration $configuration, GridContext $context): DataSourceResultContainer
     {
-        $data = \GuzzleHttp\json_decode(file_get_contents(__DIR__ . '/../../../../vendor/mledoze/countries/countries.json'), true);
+        $data = json_decode(file_get_contents(__DIR__ . '/../../../data/countries.json'), true);
         $sortApplier = new ArraySortApplier();
         $sortApplier->apply($data, $context->getDataSourceSettings()->getOrder(), $configuration->getSorting());
 

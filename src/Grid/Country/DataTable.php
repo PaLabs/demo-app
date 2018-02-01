@@ -49,7 +49,14 @@ class DataTable extends AbstractConfigurableDataTable
                 $item = $context->getRow();
                 return StringField::field($item['name']['common']);
             },
-            'capital' => $this->field('capital'),
+            'capital' => function (ColumnMakerContext $context) {
+                $value = $context->getRow()['capital'];
+                if (is_array($value)) {
+                    return StringField::field($value[0]);
+                } else {
+                    return StringField::field($value);
+                }
+            },
             'languages' => function (ColumnMakerContext $context) {
                 $fields = [];
                 foreach ($context->getRow()['languages'] as $id => $language) {
