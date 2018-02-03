@@ -2,10 +2,7 @@ parameters:
     locale: 'en'
 
 services:
-  _defaults:
-    autowire: true
-    autoconfigure: true
-    public: true
+  _defaults: {autowire: true, autoconfigure: true}
 
   Symfony\Bundle\FrameworkBundle\Templating\EngineInterface: '@twig'
 
