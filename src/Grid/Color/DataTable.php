@@ -23,7 +23,7 @@ class DataTable extends AbstractConfigurableDataTable
 
     protected function configureColumns(ColumnsBuilder $builder, GridParameters $parameters)
     {
-        $builder->add('numbering', new NumberingColumn());
+        $builder->add(new NumberingColumn());
         $callbacks = [
             'id' => function (Color $entity) {
                 return StringField::field($entity->getId());

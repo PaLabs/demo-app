@@ -30,11 +30,11 @@
     "fzaninotto/faker": "^1.7",
     "guzzlehttp/guzzle": "^6.3",
     "athari/yalinqo": "^2.4",
+    "phpoffice/phpspreadsheet": "^1.2",
     "palabs/datagrid-bundle": "dev-master",
     "palabs/endpoint-bundle": "dev-master"
   },
   "require-dev": {
-    "phpoffice/phpspreadsheet": "1.0.0-beta",
     "symfony/stopwatch": "^4.0",
     "symfony/web-profiler-bundle": "^4.0",
     "symfony/web-server-bundle": "^4.0"
@@ -62,7 +62,7 @@
     "auto-scripts": {
       "security-checker security:check": "script"
     },
-    "cache": "bin/console cache:clear --no-warmup --ansi && bin/console cache:warmup --ansi"
+    "cache": "rm -rf var/cache/dev && bin/console cache:warmup --ansi"
   },
   "repositories": [
     {

@@ -9,6 +9,7 @@ use PaLabs\DatagridBundle\DataSource\DataSourceSettingsForm;
 use PaLabs\DatagridBundle\DataSource\Filter\Form\Integer\IntegerFilterData;
 use PaLabs\DatagridBundle\DataSource\Filter\Form\Integer\IntegerFilterModelTransformer;
 use PaLabs\DatagridBundle\DataTable\AbstractConfigurableDataTable;
+use PaLabs\DatagridBundle\DataTable\Column\ColumnOptions;
 use PaLabs\DatagridBundle\DataTable\Column\ColumnsBuilder;
 use PaLabs\DatagridBundle\DataTable\Column\Type\NumberingColumn;
 use PaLabs\DatagridBundle\DataTable\DataTableSettings;
@@ -38,7 +39,7 @@ class DataTable extends AbstractConfigurableDataTable
 
     protected function configureColumns(ColumnsBuilder $builder, GridParameters $parameters)
     {
-        $builder->add('numbering', new NumberingColumn());
+        $builder->add(new NumberingColumn());
         
         $builder->addColumns([
             'id' => function (Car $entity) {
@@ -69,8 +70,8 @@ class DataTable extends AbstractConfigurableDataTable
                 return DateTimeField::field($entity->getCreatedAt());
             },
         ], [
-            'id' => 'ID',
-            'name' => 'Car name',
+            'id' => new ColumnOptions('ID', 'Common'),
+            'name' => new ColumnOptions('Car name','Common'),
             'type' => 'Type',
             'color' => 'Color',
             'engine' => 'Engine',

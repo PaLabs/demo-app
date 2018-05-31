@@ -69,8 +69,8 @@ class HtmlImageField implements Field
         $objDrawing->setName('');
         $objDrawing->setDescription('');
         $objDrawing->setImageResource($gdImage);
-        $objDrawing->setRenderingFunction(\PHPExcel_Worksheet_MemoryDrawing::RENDERING_PNG);
-        $objDrawing->setMimeType(\PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_DEFAULT);
+        $objDrawing->setRenderingFunction(MemoryDrawing::RENDERING_PNG);
+        $objDrawing->setMimeType(MemoryDrawing::MIMETYPE_DEFAULT);
         $objDrawing->setWidth(33);
         $objDrawing->setHeight(20);
         return $objDrawing;

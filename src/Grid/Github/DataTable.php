@@ -19,13 +19,13 @@ class DataTable extends AbstractConfigurableDataTable
 {
     protected function defaultSettings(GridParameters $parameters): DataTableSettings
     {
-        return new DataTableSettings(['id', 'full_name', 'description', 'fork', 'created_at', 'stars', 'language']);
+        return new DataTableSettings([NumberingColumn::FIELD_NAME, 'id', 'full_name', 'description', 'fork', 'created_at', 'stars', 'language']);
     }
 
 
     protected function configureColumns(ColumnsBuilder $builder, GridParameters $parameters)
     {
-        $builder->add('numbering', new NumberingColumn());
+        $builder->add(new NumberingColumn());
 
         $builder->addColumns([
             'id' => function (ColumnMakerContext $context) {

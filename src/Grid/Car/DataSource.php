@@ -25,11 +25,13 @@ class DataSource extends DoctrineDataSource
         $builder
             ->add('name', StringFilter::class, [
                 'default' => true,
-                'label' => 'Car name'
+                'label' => 'Car name',
+                'group' => 'Common'
             ])
             ->add('color', Select2EntityFilter::class, [
                 'default' => true,
                 'label' => 'Car color',
+                'group' => 'Common',
                 'entity_options' => [
                     'class' => Color::class,
                     'choice_label' => 'label'
@@ -44,8 +46,8 @@ class DataSource extends DoctrineDataSource
     protected function configureSorting(SortBuilder $builder, GridParameters $parameters)
     {
         $builder
-            ->add('entity.id', 'ID')
-            ->add('entity.createdAt', 'Created at')
+            ->add('entity.id', 'ID', 'Common')
+            ->add('entity.createdAt', 'Created at', 'Common')
             ->add('color.r', 'Color.Red')
             ->add('color.g', 'Color.Green')
             ->add('color.b', 'Color.Blue');

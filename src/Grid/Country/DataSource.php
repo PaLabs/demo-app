@@ -25,19 +25,19 @@ class DataSource extends AbstractConfigurableDataSource
     protected function configureSorting(SortBuilder $builder, GridParameters $parameters)
     {
         $builder
-            ->add('cca2', 'cca2', [
+            ->add('cca2', 'cca2', '', [
                 'type' => ArraySortApplier::class,
                 'comparator' => function (array $a, array $b) {
                     return strcmp($b['cca2'], $a['cca2']);
                 },
             ])
-            ->add('area', 'Area', [
+            ->add('area', 'Area', '', [
                 'type' => ArraySortApplier::class,
                 'comparator' => function (array $a, array $b) {
                     return $b['area'] - $a['area'];
                 },
             ])
-            ->add('name.common', 'Common name', [
+            ->add('name.common', 'Common name', '',[
                 'type' => ArraySortApplier::class,
                 'comparator' => function (array $a, array $b) {
                     return strcmp($a['name']['common'], $b['name']['common']);
